@@ -1,9 +1,10 @@
 'use strict'
+require('dotenv').config();
 const http = require('http')
 const Bot = require('messenger-bot')
 
 let bot = new Bot({
-  token: 'EAAPSixEWncwBAC09h4L5ynrHZB2U9cPDajE1jYwo0LZAwtMl9eapoDdYGiniLccRevesjppHpGfNsXBrZC8nyROCQnREW6BTwKrZBlrjPFKkNrQXD1RZAkpFiP3wDA5XAhU4zZBbeAZB6PylvuvbZA4oCA2iVZBqhtAJS7lgTJj3jNQZDZD',
+  token: process.env.PAGE_TOKEN,
   verify: 'VERIFY_TOKEN'
 })
 
