@@ -1,0 +1,28 @@
+{
+  "name": "first_bot_facebook",
+  "version": "1.0.0",
+  "description": "Based on this [tutorial](https://sumwu.me/blog/page/9/how-to-create-a-facebook-messenger-bot/)",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "messenger-bot": "^2.3.0",
+    "node-fetch": "^1.5.3",
+    "node-wit": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artnoisenik/facebook-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artnoisenik/facebook-bot/issues"
+  },
+  "homepage": "https://github.com/artnoisenik/facebook-bot#readme"
+}
