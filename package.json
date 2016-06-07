@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Based on this [tutorial](https://sumwu.me/blog/page/9/how-to-create-a-facebook-messenger-bot/)",
   "main": "app.js",
+  "engines": {
+  "node": "6.2.1"
+  },
   "dependencies": {
     "body-parser": "^1.15.1",
     "dotenv": "^2.0.0",
