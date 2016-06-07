@@ -7,8 +7,6 @@
     "body-parser": "^1.15.1",
     "dotenv": "^2.0.0",
     "express": "^4.13.4",
-    "messenger-bot": "^2.3.0",
-    "node-fetch": "^1.5.3",
     "node-wit": "^3.3.2"
   },
   "devDependencies": {},
