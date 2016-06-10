@@ -40,6 +40,8 @@ if (!FB_PAGE_TOKEN) {
 }
 const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
 
+const OPEN_WEATHER_TOKEN = process.env.OPEN_WEATHER_TOKEN;
+
 // Messenger API specific code
 
 // See the Send API reference
@@ -123,6 +125,13 @@ const firstEntityValue = (entities, entity) => {
   return typeof val === 'object' ? val.value : val;
 };
 
+const apiCall = request.defaults({
+  uri: 'http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN,
+  method: 'POST',
+  json: true,
+  headers: {'Content-Type': 'application/json'},
+});
+
 // Our bot actions
 const actions = {
   say(sessionId, context, message, cb) {
@@ -152,15 +161,21 @@ const actions = {
     }
   },
   merge(sessionId, context, entities, message, cb) {
-    // Retrieve the entity and store it into a context field
-    const genre = firstEntityValue(entities, 'genre');
-    if (genre) {
-      context.genre = genre;
+    // Retrieve the location entity and store it into a context field
+    const loc = firstEntityValue(entities, 'location');
+    if (loc) {
+      context.loc = loc;
     }
     cb(context);
   },
   error(sessionId, context, error) {
     console.log(error.message);
+  },
+  ['fetch-weather'](sessionId, context, cb) {
+    // Here should go the api call, e.g.:
+    // context.forecast = apiCall(context.loc)
+    context.forecast = 'sunny';
+    cb(context);
   },
   // You should implement your custom actions here
   // See https://wit.ai/docs/quickstart
