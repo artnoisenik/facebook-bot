@@ -17,4 +17,4 @@ Slightly based on this [tutorial](https://sumwu.me/blog/page/9/how-to-create-a-f
 1. Create .env; reference .env.example
 1. Reference tutorial above for verifying your webhook; yours should be the "URL/fb"
 1. This can also be deployed to heroku; simply replace the local address in the tutorial with your heroku
-1. You'll need to add testers or get the bot accepted for others to use the bot
+1. You'll need to add testers or get the bot accepted by Facebook for others to use the bot
