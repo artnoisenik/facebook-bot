@@ -179,7 +179,7 @@ const actions = {
   },
   merge(sessionId, context, entities, message, cb) {
     // Retrieve the contact entity and store it into a context field
-    const loc = firstEntityValue(entities, 'contact');
+    const contact = firstEntityValue(entities, 'contact');
     if (contact) {
       context.contact = contact;
     }
