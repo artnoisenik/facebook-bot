@@ -165,19 +165,19 @@ const actions = {
     console.log(error.message);
   },
   ['fetch-weather'](sessionId, context, cb) {
-    console.log('!!!!LOC',context.loc);
+    // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    context.forecast = apiCall(context.loc);
+    context.forecast = request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN);
     console.log('!!!!!!!FORECAST?',context.forecast);
     // context.forecast = 'sunny';
     cb(context);
   },
 };
 
-const apiCall = (location) => {
-  return request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN)
-}
+// const apiCall = (location) => {
+//   return request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN)
+// }
 
 // const apiCall = (location) => request.defaults({
 //   uri: 'http://api.openweathermap.org/data/2.5/weather',
