@@ -179,7 +179,7 @@ const apiCall = (location) => request.defaults({
   uri: 'http://api.openweathermap.org/data/2.5/weather',
   method: 'GET',
   json: true,
-  qs: { q: context.loc, appid: OPEN_WEATHER_TOKEN},
+  qs: { q: location, appid: OPEN_WEATHER_TOKEN},
 });
 
 // Setting up our bot
