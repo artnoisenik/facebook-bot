@@ -170,6 +170,7 @@ const actions = {
     console.log(error.message);
   },
   ['fetch-weather'](sessionId, context, cb) {
+    console.log('LOC',context);
 
     // Here should go the api call, e.g.:
     context.forecast = apiCall(context.loc);
@@ -187,12 +188,12 @@ const actions = {
   },
 };
 
-const apiCall = request.defaults({
-  uri: 'http://api.openweathermap.org/data/2.5/weather',
-  method: 'GET',
-  json: true,
-  qs: { q: context.loc, appid: OPEN_WEATHER_TOKEN},
-});
+// const apiCall = request.defaults({
+//   uri: 'http://api.openweathermap.org/data/2.5/weather',
+//   method: 'GET',
+//   json: true,
+//   qs: { q: context.loc, appid: OPEN_WEATHER_TOKEN},
+// });
 
 // Setting up our bot
 const wit = new Wit(WIT_TOKEN, actions);
