@@ -170,7 +170,7 @@ const actions = {
     console.log(error.message);
   },
   ['fetch-weather'](sessionId, context, cb) {
-    // console.log('!!!!LOC',context);
+    console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
     context.forecast = apiCall(context.loc);
