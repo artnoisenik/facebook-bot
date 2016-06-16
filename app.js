@@ -168,16 +168,16 @@ const actions = {
     // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    context.forecast = request.get('http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN);
-    console.log('!!!!!!!FORECAST?',context.forecast);
+    context.forecast = apiCall(context.loc);
     // context.forecast = 'sunny';
     cb(context);
+    console.log('!!!!!!!FORECAST?',context.forecast);
   },
 };
 
-// const apiCall = (location) => {
-//   return request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN)
-// }
+const apiCall = (location) => {
+  return request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN)
+}
 
 // const apiCall = (location) => request.defaults({
 //   uri: 'http://api.openweathermap.org/data/2.5/weather',
