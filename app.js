@@ -176,7 +176,6 @@ const actions = {
       method: 'GET',
       json: true,
       qs: { q: context.loc, appid: OPEN_WEATHER_TOKEN},
-      headers: {'Content-Type': 'application/json'},
     });
 
     // Here should go the api call, e.g.:
