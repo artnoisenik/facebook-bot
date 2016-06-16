@@ -178,14 +178,6 @@ const actions = {
     // context.forecast = 'sunny';
     cb(context);
   },
-  merge(sessionId, context, entities, message, cb) {
-    // Retrieve the contact entity and store it into a context field
-    const contact = firstEntityValue(entities, 'contact');
-    if (contact) {
-      context.contact = contact;
-    }
-    cb(context);
-  },
 };
 
 // const apiCall = request.defaults({
