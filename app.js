@@ -125,11 +125,6 @@ const firstEntityValue = (entities, entity) => {
   return typeof val === 'object' ? val.value : val;
 };
 
-
-// const apiCall = (context) => {
-//   request.get('http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN)
-// }
-
 // Our bot actions
 const actions = {
   say(sessionId, context, message, cb) {
@@ -180,7 +175,7 @@ const actions = {
   },
 };
 
-const apiCall = (context.loc) => request.defaults({
+const apiCall = (location) => request.defaults({
   uri: 'http://api.openweathermap.org/data/2.5/weather',
   method: 'GET',
   json: true,
