@@ -125,7 +125,7 @@ const firstEntityValue = (entities, entity) => {
   return typeof val === 'object' ? val.value : val;
 };
 
-const apiCall = request.defaults({
+const apiCall = ({
   uri: 'http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN,
   method: 'POST',
   json: true,
