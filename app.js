@@ -125,14 +125,10 @@ const firstEntityValue = (entities, entity) => {
   return typeof val === 'object' ? val.value : val;
 };
 
-const apiCall = (context) => {
-  const data = {
-  uri: 'http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN,
-  method: 'POST',
-  json: true,
-  headers: {'Content-Type': 'application/json'},
-  }
-};
+
+// const apiCall = (context) => {
+//   request.get('http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN)
+// }
 
 // Our bot actions
 const actions = {
@@ -174,6 +170,14 @@ const actions = {
     console.log(error.message);
   },
   ['fetch-weather'](sessionId, context, cb) {
+
+    const apiCall = request.defaults({
+      uri: 'http://api.openweathermap.org/data/2.5/weather',
+      method: 'GET',
+      json: true,
+      qs: { q: context.loc, appid: OPEN_WEATHER_TOKEN},
+      headers: {'Content-Type': 'application/json'},
+    });
 
     // Here should go the api call, e.g.:
     context.forecast = apiCall(context.loc)
