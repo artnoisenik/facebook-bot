@@ -175,12 +175,16 @@ const actions = {
   },
 };
 
-const apiCall = (location) => request.defaults({
-  uri: 'http://api.openweathermap.org/data/2.5/weather',
-  method: 'GET',
-  json: true,
-  qs: { q: location, appid: OPEN_WEATHER_TOKEN},
-});
+const apiCall = (location) => {
+  request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN)
+}
+
+// const apiCall = (location) => request.defaults({
+//   uri: 'http://api.openweathermap.org/data/2.5/weather',
+//   method: 'GET',
+//   json: true,
+//   qs: { q: location, appid: OPEN_WEATHER_TOKEN},
+// });
 
 // Setting up our bot
 const wit = new Wit(WIT_TOKEN, actions);
