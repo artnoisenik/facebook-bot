@@ -168,7 +168,7 @@ const actions = {
     // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    context.forecast = request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN);
+    context.forecast = request.get('http://api.openweathermap.org/data/2.5/weather?q=' + context.loc + '&appid=' + OPEN_WEATHER_TOKEN);
     console.log('!!!!!!!FORECAST?',context.forecast);
     // context.forecast = 'sunny';
     cb(context);
