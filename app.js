@@ -168,10 +168,10 @@ const actions = {
     // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    context.forecast = apiCall(context.loc);
+    context.forecast = 'bloom-bucket';
+    console.log('!!!!!!!FORECAST?',apiCall(context.loc));
     // context.forecast = 'sunny';
     cb(context);
-    console.log('!!!!!!!FORECAST?',context.forecast);
   },
 };
 
