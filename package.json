@@ -4,6 +4,7 @@
   "description": "Based on this [tutorial](https://sumwu.me/blog/page/9/how-to-create-a-facebook-messenger-bot/)",
   "main": "app.js",
   "dependencies": {
+    "axios": "^0.12.0",
     "body-parser": "^1.15.1",
     "dotenv": "^2.0.0",
     "express": "^4.13.4",
