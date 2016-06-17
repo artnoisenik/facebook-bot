@@ -169,9 +169,8 @@ const actions = {
 
     // Here should go the api call, e.g.:
     let data = apiCall(context.loc);
-    console.log('PARSED!!',JSON.parse(data));
     //  context.forecast
-    console.log('!!!!!!!FORECAST?',data.weather);
+    console.log('!!!!!!!FORECAST?',data);
     // context.forecast = 'sunny';
     cb(context);
   },
@@ -186,7 +185,7 @@ const apiCall = (location) => request({
   headers: {'Content-Type': 'application/json'},
 })
   .on('data', function (data) {
-    console.log('SUCCESS!');
+    console.log('DATATATAT',data);
   })
 
 // Setting up our bot

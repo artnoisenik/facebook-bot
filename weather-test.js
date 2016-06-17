@@ -8,6 +8,7 @@ const request = require('request');
 
 const OPEN_WEATHER_TOKEN = process.env.OPEN_WEATHER_TOKEN;
 
+// let info;
 const apiCall = (location) => request({
   uri: 'http://api.openweathermap.org/data/2.5/weather',
   method: 'GET',
@@ -17,7 +18,7 @@ const apiCall = (location) => request({
   headers: {'Content-Type': 'application/json'},
 })
   .on('data', function (data) {
-    return JSON.parse(data);
+    JSON.parse(data)
   })
 
-apiCall('tokyo');
+console.log(apiCall('tokyo'));
