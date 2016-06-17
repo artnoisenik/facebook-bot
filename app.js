@@ -168,24 +168,24 @@ const actions = {
     // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    context.forecast = 'bloom-bucket';
-    console.log('!!!!!!!FORECAST?',apiCall(context.loc));
+    // context.forecast = apiCall(context.loc);
+    console.log('!!!!!!!FORECAST?',context.forecast);
     // context.forecast = 'sunny';
     cb(context);
   },
 };
 
-const apiCall = (location) => {
-  var weather = request.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + OPEN_WEATHER_TOKEN);
-  return weather;
-}
-
-// const apiCall = (location) => request.defaults({
-//   uri: 'http://api.openweathermap.org/data/2.5/weather',
-//   method: 'GET',
-//   json: true,
-//   qs: { q: location, appid: OPEN_WEATHER_TOKEN},
-// });
+const apiCall = (location) => request({
+  uri: 'http://api.openweathermap.org/data/2.5/weather',
+  method: 'GET',
+  encoding: 'utf-8',
+  json: true,
+  qs: { q: location, appid: OPEN_WEATHER_TOKEN},
+  headers: {'Content-Type': 'application/json'},
+})
+  .on('data', function (data) {
+    console.log('DATATATAT',data);
+  })
 
 // Setting up our bot
 const wit = new Wit(WIT_TOKEN, actions);
