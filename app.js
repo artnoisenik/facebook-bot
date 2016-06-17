@@ -169,8 +169,7 @@ const actions = {
 
     // Here should go the api call, e.g.:
     let data = apiCall(context.loc);
-    //  context.forecast
-    console.log('!!!!!!!FORECAST?',data);
+     context.forecast = data.weather;
     // context.forecast = 'sunny';
     cb(context);
   },
@@ -186,6 +185,7 @@ const apiCall = (location) => request({
 })
   .on('data', function (data) {
     console.log('DATATATAT',data);
+    cb()
   })
 
 // Setting up our bot
