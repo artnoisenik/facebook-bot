@@ -18,7 +18,8 @@ const apiCall = (location) => request({
   headers: {'Content-Type': 'application/json'},
 })
   .on('data', function (data) {
-    JSON.parse(data)
+    let stuff = JSON.parse(data);
+    console.log(stuff);
   })
 
-console.log(apiCall('tokyo'));
+apiCall('tokyo');
