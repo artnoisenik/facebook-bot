@@ -168,7 +168,7 @@ const actions = {
     // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    let data = apiCall(context.loc);
+    let info = apiCall(context.loc);
     //  context.forecast
     console.log('!!!!!!!FORECAST?',info.weather);
     // context.forecast = 'sunny';
@@ -185,7 +185,7 @@ const apiCall = (location) => request({
   headers: {'Content-Type': 'application/json'},
 })
   .on('data', function (data) {
-    let info = JSON.parse(data);
+    return JSON.parse(data);
   })
 
 // Setting up our bot
