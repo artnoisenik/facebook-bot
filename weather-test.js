@@ -17,8 +17,7 @@ const apiCall = (location) => request({
   headers: {'Content-Type': 'application/json'},
 })
   .on('data', function (data) {
-    let weather = JSON.parse(data);
-    console.log('DATATATAT',weather.weather[0].description);
+    return JSON.parse(data);
   })
 
 apiCall('tokyo');
