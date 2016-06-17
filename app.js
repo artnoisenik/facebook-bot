@@ -168,7 +168,7 @@ const actions = {
     // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    // context.forecast = apiCall(context.loc);
+    context.forecast = apiCall(context.loc);
     console.log('!!!!!!!FORECAST?',context.forecast);
     // context.forecast = 'sunny';
     cb(context);
