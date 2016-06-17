@@ -169,7 +169,7 @@ const actions = {
 
     // Here should go the api call, e.g.:
     context.forecast = apiCall(context.loc);
-    console.log('!!!!!!!FORECAST?',context.forecast);
+    console.log('!!!!!!!FORECAST?',context.forecast.weather);
     // context.forecast = 'sunny';
     cb(context);
   },
