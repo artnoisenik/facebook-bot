@@ -18,6 +18,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const express = require('express');
 const request = require('request');
+const axios = require('axios');
 
 // When not cloning the `node-wit` repo, replace the `require` like so:
 // const Wit = require('node-wit').Wit;
