@@ -167,9 +167,8 @@ const actions = {
   ['fetch-weather'](sessionId, context, cb) {
 
     // Here should go the api call, e.g.:
-    let data = {};
 
-    apiCall('tokyo').then((result) => {
+    apiCall(context.loc).then((result) => {
         console.log(result);
         data = result;
     });
