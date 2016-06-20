@@ -165,29 +165,26 @@ const actions = {
     console.log(error.message);
   },
   ['fetch-weather'](sessionId, context, cb) {
-    // console.log('!!!!LOC',context.loc);
 
     // Here should go the api call, e.g.:
-    let data = apiCall(context.loc);
+    let data = {};
+
+    apiCall('tokyo').then((result) => {
+        console.log(result);
+        data = result;
+    });
     console.log('data!', data);
-     context.forecast = data.weather;
+    //  context.forecast = data.weather;
     // context.forecast = 'sunny';
     cb(context);
   },
 };
 
-const apiCall = (location) => request({
-  uri: 'http://api.openweathermap.org/data/2.5/weather',
-  method: 'GET',
-  encoding: 'utf-8',
-  json: true,
-  qs: { q: location, appid: OPEN_WEATHER_TOKEN},
-  headers: {'Content-Type': 'application/json'},
-})
-  .on('data', function (data) {
-    console.log('DATATATAT',data);
-   return data;
+const apiCall = (location) => {
+return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${OPEN_WEATHER_TOKEN}`).then((res) => {
+  return res.data;
   })
+}
 
 // Setting up our bot
 const wit = new Wit(WIT_TOKEN, actions);
