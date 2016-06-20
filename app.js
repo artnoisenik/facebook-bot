@@ -169,13 +169,13 @@ const actions = {
 
     // Here should go the api call, e.g.:
 
-    let data = apiCall(context.loc).then((result) => {
-      return result;
+    apiCall(context.loc).then((result) => {
+       context.forecast = result.weather[0].description;
+
+      cb(context);
     });
 
-     context.forecast = data.weather[0].description;
     // context.forecast = 'sunny';
-    cb(context);
   },
 };
 
