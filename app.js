@@ -170,7 +170,7 @@ const actions = {
     // Here should go the api call, e.g.:
 
     apiCall(context.loc).then((result) => {
-       context.forecast = result.weather[0].description;
+      context.forecast = result.weather[0].description;
 
       cb(context);
     });
@@ -178,7 +178,18 @@ const actions = {
   ['fetch-temp'](sessionId, context, cb) {
 
     apiCall(context.loc).then((result) => {
-       context.temp = Math.round(result.main.temp * 9/5 - 459.67);
+      context.temp = Math.round(result.main.temp * 9/5 - 459.67);
+
+      cb(context);
+    });
+  },
+  ['fetch-rundown'](sessionId, context, cb) {
+
+    apiCall(context.loc).then((result) => {
+      context.forecast = result.weather[0].description;
+      context.temp = Math.round(result.main.temp * 9/5 - 459.67);
+      context.temp_max = Math.round(result.main.temp_max * 9/5 - 459.67);
+      context.humidity = result.main.humidity;
 
       cb(context);
     });
