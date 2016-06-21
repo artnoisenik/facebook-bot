@@ -178,7 +178,7 @@ const actions = {
   ['fetch-temp'](sessionId, context, cb) {
 
     apiCall(context.loc).then((result) => {
-       context.temp = result.main.temp * 9/5 - 459.67;
+       context.temp = Math.round(result.main.temp * 9/5 - 459.67);
 
       cb(context);
     });
