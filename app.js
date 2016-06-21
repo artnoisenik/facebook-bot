@@ -174,8 +174,14 @@ const actions = {
 
       cb(context);
     });
+  },
+  ['fetch-temp'](sessionId, context, cb) {
 
-    // context.forecast = 'sunny';
+    apiCall(context.loc).then((result) => {
+       context.temp = result.main.temp;
+
+      cb(context);
+    });
   },
 };
 
