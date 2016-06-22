@@ -154,8 +154,6 @@ const actions = {
   },
   ['fetch-weather'](sessionId, context, cb) {
 
-    // Here should go the api call, e.g.:
-
     apiCall(context.loc).then((result) => {
       context.forecast = result.weather[0].description;
 
